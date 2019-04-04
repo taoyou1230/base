@@ -3,6 +3,13 @@ package cn.ubiot.common.autobean;
 
 import cn.ubiot.common.autobean.dao.*;
 import cn.ubiot.common.autobean.dao.impl.*;
+import cn.ubiot.common.user.entity.User;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MainRunner {
 
@@ -95,13 +102,28 @@ public class MainRunner {
      * @param args
      */
     public static void main(String[] args) {
-        MainRunner mr=new MainRunner();
-        try {
-            mr.generateCodeByEntity();
-//            mr.generateCode();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        MainRunner mr=new MainRunner();
+//        try {
+//            mr.generateCodeByEntity();
+////            mr.generateCode();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        List<User> list = new ArrayList<User>();
+        User user1 = new User();
+        user1.setUserId(10);
+        list.add(user1);
+
+        User user2 = new User();
+        user2.setUserId(2);
+        list.add(user2);
+
+        User user3 = new User();
+        user3.setUserId(3);
+        list.add(user3);
+        System.out.println(list);
+        Collections.sort(list,(p1, p2) -> p1.getUserId() - p2.getUserId());
+        System.out.println(JSON.toJSONString(list));
     }
 
 

@@ -42,4 +42,33 @@ public class User {
     public void setExp(Long exp) {
         this.exp = exp;
     }
+
+
+    private int ints;
+
+    private double doubles1;
+    private Double doubles2;
+    public int getInts() {
+        return ints;
+    }
+
+    public void setInts(int ints) {
+        this.ints = ints;
+    }
+
+    public double getDoubles1() {
+        return doubles1;
+    }
+
+    public void setDoubles1(double doubles1) {
+        this.doubles1 = doubles1;
+    }
+
+    public Double getDoubles2() {
+        return doubles2;
+    }
+
+    public void setDoubles2(Double doubles2) {
+        this.doubles2 = doubles2;
+    }
 }
